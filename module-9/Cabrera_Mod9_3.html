@@ -1,0 +1,45 @@
+<!--Bryan Cabrera, Module 9.3 Assignment, 7/6/2024-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSD 340 Web Development with HTML and CSS </title>
+    <script>
+        var firstWord = "empire";
+        var secondWord = "republic";
+        var thirdWord = "democracy";
+        var fourthWord = "absolutes";
+    </script>
+</head>
+
+<body>
+    <div id="container"></div>
+    <h1>Assignment 9.3: JavaScript - Part 1</h1>
+    <p>I have brought peace, freedom, justice, and security to my new <span id="firstWord">______</span>.</p>
+    <p>Your new empire?</p>
+    <p>Don't make me kill you.</p>
+    <p>Anakin, my allegiance is to the <span id="secondWord">________</span>, to <span id="thirdWord">_________</span>!</p>
+    <p>If you're not with me, then you're my enemy.</p>
+    <p>Only a Sith deals in <span id="fourthWord">_________</span>. I will do what I must.</p>
+    <p>You will try.</p>
+
+    <p>
+        <button type="button" onclick="document.getElementById('firstWord').innerHTML = firstWord">Empire</button>
+        <button type="button" onclick="document.getElementById('secondWord').innerHTML = secondWord">Republic</button>
+        <button type="button" onclick="document.getElementById('thirdWord').innerHTML = thirdWord">Democracy</button>
+        <button type="button" onclick="document.getElementById('fourthWord').innerHTML = fourthWord">Absolutes</button>
+    </p>
+
+    <hr>
+    <address>
+        <a href="https://www.bellevue.edu/">Bellevue University</a><br>
+        1000 Galvin Rd South<br>
+        Bellevue NE, 68005<br> 
+    </address>
+
+    <footer>
+        <p><a href="index.html">Back to landing page</a></p>
+    </footer>
+</body>
+</html>
