@@ -1,0 +1,93 @@
+<!--Bryan Cabrera, Module 11 Assignment, 7/21/2024-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSD 340 Web Development with HTML and CSS</title>
+
+    <style>
+        input[type="text"]{
+            padding: 10px;
+            width: 200px;
+            margin-bottom: 10px;
+        }
+        button{
+            padding: 10px 20px;
+            margin: 5px;
+            border: none;
+            background-color: #2e30b3;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover{
+            background-color: #45a049;
+        }
+    </style>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const entries = [];
+
+            //Add entry function
+            function addEntry() {
+                const textBox = document.getElementById("textBox");
+                const entry = textBox.value.trim();
+                if (entry !== "") {
+                    entries.push(entry);
+                    textBox.value = "";
+                    displayEntries();
+                }
+            }
+
+            //Delete entry function
+            function deleteLastEntry() {
+                if (entries.length > 0) {
+                    entries.pop();
+                    displayEntries();
+                }
+            }
+
+            //Display entries function
+            function displayEntries() {
+                const displayArea = document.getElementById("displayArea");
+                displayArea.innerHTML = "";
+                entries.forEach(entry => {
+                    const listItem = document.createElement("li");
+                    listItem.textContent = entry;
+                    displayArea.appendChild(listItem);
+                });
+            }
+
+            //Events for buttons
+            document.getElementById("addButton").addEventListener("click", addEntry);
+            document.getElementById("deleteButton").addEventListener("click", deleteLastEntry);
+            document.getElementById("displayButton").addEventListener("click", displayEntries);
+
+        });
+    </script>
+</head>
+
+<body>
+    <header>
+    <h1>Assignment 11.2: JavaScript - Part 3</h1>
+    </header>
+
+    <!--Text box and buttons-->
+    <div class="container">
+        <input type="text" id="textBox" placeholder="Enter Text">
+        <br>
+        <button id="addButton">Add</button>
+        <button id="deleteButton">Delete Entry</button>
+        <button id="displayButton">Display</button>
+        <ul id="displayArea"></ul>
+    </div>
+
+
+    <footer>
+        <p><a href="index.html">Back to landing page</a></p>
+        <p>&copy; 2024 Cabrera</p>
+    </footer>
+</body>
+</html>
