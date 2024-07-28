@@ -1,0 +1,98 @@
+<!-- Bryan Cabrera, Module 12.2 Assignment, 7/28/2024 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>CSD 340 Web Development with HTML and CSS</title>
+    <link rel="stylesheet" href="Cabrera_Mod3_3.css">
+</head>
+
+<body>
+    <div id="container">
+        <h1>Assignment 12.2: JavaScript - Part 4!</h1>
+        <div id="content">
+            <!--Left div-->
+            <div id="left">
+                <h3>Top 10 Favorite Books</h3>
+                <ol id="book-list">
+                    <li>I Am The Cheese</li>
+                    <li>Harry Potter series</li>
+                    <li>The Hunger Games</li>
+                    <li>The Great Gatsby</li>
+                    <li>Game of Thrones</li>
+                    <li>Star Wars: Inquisitor</li>
+                    <li>Star Wars: Revenge Of The Sith novelization</li>
+                    <li>Star Wars Darth Bane: Path of Destruction</li>
+                    <li>Nineteen Eighty-Four</li>
+                    <li>Star Wars: Darth Plagueis</li>
+                </ol>
+            </div>
+
+            <!--Button div, needed before the script to work-->
+            <div id="buttons">
+                <button id="top-to-bottom">Top to Bottom</button>
+                <button id="bottom-to-top">Bottom to Top</button>
+            </div>
+
+            <script>
+            <!--Books array-->
+            let topBooks = [
+            "I Am The Cheese",
+            "Harry Potter Series",
+            "The Hunger Games",
+            "The Great Gatsby",
+            "Game of Thrones",
+            "Star Wars: Inquisitor",
+            "Star Wars: Revenge Of The Sith novelization",
+            "Star Wars Darth Bane: Path of Destruction",
+            "Nineteen Eighty-Four",
+            "Star Wars: Darth Plagueis"
+            ];
+
+            //Function to display array in ascending order
+            function displayTopToBottom() {
+                const bookList = document.getElementById("book-list");
+                bookList.innerHTML = "";
+                topBooks.sort().forEach(book => {
+                    const li = document.createElement("li");
+                    li.textContent = book;
+                    bookList.appendChild(li);
+                });
+            }
+
+            //Function to display array in descending order
+            function displayBottomToTop() {
+                const bookList = document.getElementById("book-list");
+                bookList.innerHTML = "";
+                topBooks.sort().reverse().forEach(book => {
+                    const li = document.createElement("li");
+                    li.textContent = book;
+                    bookList.appendChild(li);
+                });
+            }
+
+            //Event listeners for buttons
+            document.getElementById("top-to-bottom").addEventListener("click", displayTopToBottom);
+            document.getElementById("bottom-to-top").addEventListener("click", displayBottomToTop);
+
+            </script>
+
+            <!--Right div-->
+            <div id="right">
+                <h3>5 Things I've Learned Since the Course Started</h3>
+                <ul>
+                    <li>How to link CSS code to an HTML file</li>
+                    <li>Proper formatting for HTML and CSS files</li>
+                    <li>Uploading files and projects to Github</li>
+                    <li>That Github allows for HTML editing in the README section</li>
+                    <li>Design aspects that work alongside CSS</li>
+                </ul>
+            </div>
+
+            <!--Closing div that returns user to landing page-->
+            <div id="footer">
+                <a href="index.html">Return to Landing Page</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
